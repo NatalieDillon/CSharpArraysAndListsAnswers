@@ -100,17 +100,52 @@
 		// 3: Temperatures
 		// Populate a list of doubles to represent daily temperatures over two weeks
 		// Calculate and output the min, max and average temperatures over the time period
+		// Fine to use any of the methods available on the list
 		// Sort the list in ascending order and output it
-		private static void Temperatures()
+		public static void Temperatures()
 		{
-
+			List<double> temperatures = new () {22.4, 19.3, 28.4, 23.4, 19.6, 27.5, 20.0, 17.4, 23.8, 29.56, 25.7, 23.9, 26.7, 30.1 };
+			Console.WriteLine($"The minimum temperature is {temperatures.Min()}");
+			Console.WriteLine($"The maximum temperature is {temperatures.Max()}");
+			Console.WriteLine($"The maximum temperature is {temperatures.Max()}");
+			Console.WriteLine($"The average is {temperatures.Average():0.##}");
+			temperatures.Sort(); // Sorts the temperatures
+			Console.WriteLine("The sorted temperatures are: " + string.Join("," , temperatures));
 		}
 
-		// 4: Students
-		// Populate a list of student data with a firstname, surname and date of birth. Use a tuple.
-		// Output the names of the oldest and youngest students
-		// Output out how many students were born after 2010
-		// Create a new list of strings with the full names of all the students and output this
+		// 4: Employees
+		// Populate a list of employee data for at least five employees with a firstname, surname and date of birth.
+		// Use a tuple to do this.
+		// Below is an example of using a tuple to represent an item in a shopping basket
+		// List<(string item, int number)> shoppingList = new()
+		// {
+		//	new ("BakedBeans", 2),
+		//	new ("Apples", 6)
+		//	};
+		// Output the names of the oldest and youngest employees 
+		// Output out how many students were born after 1990
+		// Create a new list of strings with the full names of all the employees and output this
+		// You may find the functions OrderBy, Count and Select which you can call on a list are helpful
+		public static void Employees()
+		{
+			List<(string firstName, string surname, DateTime dateOfBirth)> employees = new()
+			{
+				new ("Bob", "Dylan", new DateTime(1945, 10, 12)),
+				new ("Jane", "Smith", new DateTime(2001, 11, 2)),
+				new ("Tina", "Brown", new DateTime(1995, 04, 19)),
+				new ("William", "Green", new DateTime(1982, 02, 23)),
+				new ("Jenny", "Costa", new DateTime(1975, 07, 21)),
+			};
+			var sortedEmployees = employees.OrderBy(x => x.dateOfBirth).ToList();
+			var youngest = sortedEmployees[sortedEmployees.Count - 1];
+			Console.WriteLine($"The youngest employee is {youngest.firstName} {youngest.surname} who was born on {youngest.dateOfBirth:dd/MM/yyyy}");
+			var oldest = sortedEmployees[0];
+			Console.WriteLine($"The oldest employee is {oldest.firstName} {oldest.surname} who was born on {oldest.dateOfBirth:dd/MM/yyyy}");
+			int bornAfter1990 = employees.Count(x => x.dateOfBirth.Year > 1990);
+			Console.WriteLine($"{bornAfter1990} employees were born after 1990");
+			List<string> fullNames = employees.Select(x => $"{x.firstName} {x.surname}").ToList();
+			Console.WriteLine("Employee names are: " + string.Join(", ", fullNames));
+		}
 
 		// 5: Noughts And Crosses (Extension)
 		// Populate a list of student data with a firstname, surname and date of birth. Use a tuple.

@@ -6,8 +6,12 @@ namespace CSharpArraysAndLists
 	{
 		static void Main()
 		{
-			//Exercises.StudentOptions();
-			Exercises.StudentAttendance();
+			// Exercises.StudentOptions();
+			//Console.WriteLine();
+			// Exercises.StudentAttendance();
+			Exercises.Temperatures();
+			Console.WriteLine();
+			Exercises.Employees();
 		}
 	}
 }
