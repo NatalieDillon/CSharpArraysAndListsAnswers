@@ -7,9 +7,10 @@
 			Exercises.Temperatures();
 			Console.WriteLine();
 			Exercises.Employees();
-			// Exercises.StudentOptions();
-			//Console.WriteLine();
-			// Exercises.StudentAttendance();
+			Console.WriteLine();
+			Exercises.StudentOptions();
+			Console.WriteLine();
+		    Exercises.StudentAttendance();
 		}
 	}
 }
