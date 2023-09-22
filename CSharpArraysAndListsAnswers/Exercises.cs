@@ -1,10 +1,10 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.ComponentModel;
-using System.Diagnostics.Metrics;
-using System.Runtime.Intrinsics.X86;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CSharpArraysAndLists.Classes
+namespace CSharpArraysAndLists
 {
 	public static class Exercises
 	{
@@ -110,13 +110,13 @@ namespace CSharpArraysAndLists.Classes
 		// Sort the list in ascending order and output it
 		public static void Temperatures()
 		{
-			List<double> temperatures = new () {22.4, 19.3, 28.4, 23.4, 19.6, 27.5, 20.0, 17.4, 23.8, 29.56, 25.7, 23.9, 26.7, 30.1 };
+			List<double> temperatures = new() { 22.4, 19.3, 28.4, 23.4, 19.6, 27.5, 20.0, 17.4, 23.8, 29.56, 25.7, 23.9, 26.7, 30.1 };
 			Console.WriteLine($"The minimum temperature is {temperatures.Min()}");
 			Console.WriteLine($"The maximum temperature is {temperatures.Max()}");
 			Console.WriteLine($"The maximum temperature is {temperatures.Max()}");
 			Console.WriteLine($"The average is {temperatures.Average():0.##}");
 			temperatures.Sort(); // Sorts the temperatures
-			Console.WriteLine("The sorted temperatures are: " + string.Join("," , temperatures));
+			Console.WriteLine("The sorted temperatures are: " + string.Join(",", temperatures));
 		}
 
 		// 4: Employees
@@ -156,12 +156,12 @@ namespace CSharpArraysAndLists.Classes
 		// 5: Noughts And Crosses (Extension)
 		// Write a game of noughts and crosses.
 		// Players should be able to choose their move
-        // It should print the state of the board after each player has chosen a move
-        // The game will end when either there are no available spaces left on the board or one of the players has won.
+		// It should print the state of the board after each player has chosen a move
+		// The game will end when either there are no available spaces left on the board or one of the players has won.
 		// Break into suitable subprograms preferring functions where appropriate
 
 
-	
+
 
 	}
 }
