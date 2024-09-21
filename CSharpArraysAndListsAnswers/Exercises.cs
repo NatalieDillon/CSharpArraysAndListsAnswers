@@ -32,6 +32,10 @@ namespace CSharpArraysAndLists
 		// Week 2: 977, 923, 923, 950, 900
 		// Week 3: 970, 956, 976, 960, 897
 		// Week 4: 912, 942, 959, 970, 888
+		//
+		// Note that to initialise a two dimensional array curly brackets are required as illustrated below</br>
+		// int[,] numbers = { { 4, 5 }, { 9, 3 }, { 6, 2 }, { 8, 13 } };
+		//
 		// Make the following options available to the user
 		// 1. Find the attendance for a particular week and day 
 		// 2. Find the average attendance for a particular week
@@ -110,7 +114,7 @@ namespace CSharpArraysAndLists
 		// Sort the list in ascending order and output it
 		public static void Temperatures()
 		{
-			List<double> temperatures = new() { 22.4, 19.3, 28.4, 23.4, 19.6, 27.5, 20.0, 17.4, 23.8, 29.56, 25.7, 23.9, 26.7, 30.1 };
+			List<double> temperatures = [ 22.4, 19.3, 28.4, 23.4, 19.6, 27.5, 20.0, 17.4, 23.8, 29.56, 25.7, 23.9, 26.7, 30.1 ];
 			Console.WriteLine($"The minimum temperature is {temperatures.Min()}");
 			Console.WriteLine($"The maximum temperature is {temperatures.Max()}");
 			Console.WriteLine($"The maximum temperature is {temperatures.Max()}");
@@ -123,25 +127,25 @@ namespace CSharpArraysAndLists
 		// Populate a list of employee data for at least five employees with a firstname, surname and date of birth.
 		// Use a tuple to do this.
 		// Below is an example of using a tuple to represent an item in a shopping basket
-		// List<(string item, int number)> shoppingList = new()
-		// {
-		//	new ("BakedBeans", 2),
-		//	new ("Apples", 6)
-		//	};
+		//List<(string item, int number)> shoppingList =
+		//	[
+		//		("BakedBeans", 2),
+		//		("Apples", 6)
+		//	];
 		// Output the names of the oldest and youngest employees 
 		// Output out how many students were born after 1990
 		// Create a new list of strings with the full names of all the employees and output this
 		// You may find the functions OrderBy, Count and Select which you can call on a list are helpful
 		public static void Employees()
 		{
-			List<(string firstName, string surname, DateTime dateOfBirth)> employees = new()
-			{
-				new ("Bob", "Dylan", new DateTime(1945, 10, 12)),
-				new ("Jane", "Smith", new DateTime(2001, 11, 2)),
-				new ("Tina", "Brown", new DateTime(1995, 04, 19)),
-				new ("William", "Green", new DateTime(1982, 02, 23)),
-				new ("Jenny", "Costa", new DateTime(1975, 07, 21)),
-			};
+			List<(string firstName, string surname, DateTime dateOfBirth)> employees = 
+			[
+				("Bob", "Dylan", new DateTime(1945, 10, 12)),
+				("Jane", "Smith", new DateTime(2001, 11, 2)),
+				("Tina", "Brown", new DateTime(1995, 04, 19)),
+				("William", "Green", new DateTime(1982, 02, 23)),
+				("Jenny", "Costa", new DateTime(1975, 07, 21)),
+			];
 			var sortedEmployees = employees.OrderBy(x => x.dateOfBirth).ToList();
 			var youngest = sortedEmployees[sortedEmployees.Count - 1];
 			Console.WriteLine($"The youngest employee is {youngest.firstName} {youngest.surname} who was born on {youngest.dateOfBirth:dd/MM/yyyy}");
