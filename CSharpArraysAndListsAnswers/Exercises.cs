@@ -103,7 +103,7 @@ namespace CSharpArraysAndLists
 			{
 				dailyTotal += attendanceRecords[i, dailyInput - 1];
 			}
-			double average = dailyTotal / attendanceRecords.GetLength(1);
+			double average = dailyTotal / attendanceRecords.GetLength(0);
 			Console.WriteLine($"The average attendance in day {dailyInput} is: {average:0.##}");
 		}
 
@@ -116,7 +116,6 @@ namespace CSharpArraysAndLists
 		{
 			List<double> temperatures = [ 22.4, 19.3, 28.4, 23.4, 19.6, 27.5, 20.0, 17.4, 23.8, 29.56, 25.7, 23.9, 26.7, 30.1 ];
 			Console.WriteLine($"The minimum temperature is {temperatures.Min()}");
-			Console.WriteLine($"The maximum temperature is {temperatures.Max()}");
 			Console.WriteLine($"The maximum temperature is {temperatures.Max()}");
 			Console.WriteLine($"The average is {temperatures.Average():0.##}");
 			temperatures.Sort(); // Sorts the temperatures
